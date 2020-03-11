@@ -1,0 +1,27 @@
+#!/bin/sh
+
+apt-get update && \
+    apt-get install --force-yes -yq \
+    wget \
+    autoconf \
+    build-essential \
+    libcurl4-gnutls-dev \
+    libglib2.0-dev \
+    libgdk-pixbuf2.0-dev \
+    libgtkglext1-dev \
+    libatk1.0-dev \
+    libcairo2-dev \
+    libtool \
+    libxml2-dev \
+    libxss-dev \
+    libgconf2-dev \
+    default-jre \
+    qt5-qmake \
+    qt5-default  \
+    p7zip-full \
+    git \
+    subversion
+
+
+cd Common/3dParty && ./make.sh && rm v8/v8/third_party/binutils/Linux_x64/Release/bin/ld.gold && \
+    ln -s /usr/bin/ld.gold v8/v8/third_party/binutils/Linux_x64/Release/bin/ld.gold && ./make.sh
