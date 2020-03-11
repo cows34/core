@@ -1,0 +1,8 @@
+extraction:
+  cpp:
+    configure:
+      command:
+        - ./prepare_deps
+    index:
+      build_command:
+        - make all
